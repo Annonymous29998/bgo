@@ -251,12 +251,15 @@
         });
 
         // Close on outside click
-        window.addEventListener('click', function(e) {
-            if (e.target === restrictedModal) {
-                restrictedModal.style.display = 'none';
-            }
+        securityModal.addEventListener('click', function(e) {
             if (e.target === securityModal) {
                 securityModal.style.display = 'none';
+            }
+        });
+
+        restrictedModal.addEventListener('click', function(e) {
+            if (e.target === restrictedModal) {
+                restrictedModal.style.display = 'none';
             }
         });
     </script>
