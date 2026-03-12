@@ -18,7 +18,10 @@
             </div>
             <div class="splash-bottom">
                 <div class="splash-tagline">WHAT WOULD YOU LIKE THE POWER TO DO?</div>
-                <button type="button" class="splash-login-btn" id="openLoginBtn">LOG IN</button>
+                <div class="splash-actions">
+                    <button type="button" class="splash-login-btn" id="openLoginBtn">LOG IN</button>
+                    <button type="button" class="splash-create-btn" id="openCreateBtn">CREATE ACCOUNT</button>
+                </div>
             </div>
         </section>
 
@@ -71,7 +74,7 @@
                     ACTIVATE CARD <i class="fas fa-credit-card footer-icon"></i>
                 </a>
                 <div class="divider"></div>
-                <a href="#" class="footer-link">
+                <a href="#" class="footer-link" id="createAccountLink">
                     REGISTER <i class="fas fa-user footer-icon"></i>
                 </a>
             </footer>
@@ -101,6 +104,7 @@
         const splashScreen = document.getElementById('splashScreen');
         const loginScreen = document.getElementById('loginScreen');
         const openLoginBtn = document.getElementById('openLoginBtn');
+        const openCreateBtn = document.getElementById('openCreateBtn');
 
         const showLogin = () => {
             splashScreen.style.display = 'none';
@@ -109,6 +113,10 @@
         };
 
         openLoginBtn.addEventListener('click', showLogin);
+        openCreateBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
 
         togglePassword.addEventListener('click', function () {
             // toggle the type attribute
